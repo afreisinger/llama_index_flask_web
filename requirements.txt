@@ -1,0 +1,4 @@
+flask
+llama_index
+PyPDF2
+docx2txt

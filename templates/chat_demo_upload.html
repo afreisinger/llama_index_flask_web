@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Groso Demo</title>
+    <style>
+      /* Some CSS to style the chat layout */
+      .chat {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        overflow-y: scroll;
+        padding: 10px;
+      }
+      .chat__message {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        align-self: flex-start;
+        max-width: 80%;
+      }
+      .chat__message--received {
+        background-color: #e5e5e5;
+        align-self: flex-end;
+      }
+      .chat__message--sent {
+        background-color: #2196f3;
+        color: #fff;
+        align-self: flex-start;
+      }
+      .chat__form {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+      }
+      .chat__form input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+      .chat__form button {
+        background-color: #2196f3;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="chat__form">
+      <div class="chat__message chat__message--received">
+        Hola <b> Estimado </b>. Puede Ud subir un archivo con doc pdf txt o un zip con una combinacion de archivos. :
+      </div>
+    </div>
+
+    <div class="chat">
+
+        <h4>Subir archivo ( .txt, .doc, .docx, .pdf o .zip )</h1>
+        <form method="POST" enctype="multipart/form-data">
+          <input type="file" name="file" accept=".txt,.doc,.docx,.pdf,.zip" />
+          <br />
+          <input type="submit" value="Subir archivo" />
+        </form>
+
+    </div>
+    <div>
+        {{ message }}
+    </div>
+   
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ 
+</html>
